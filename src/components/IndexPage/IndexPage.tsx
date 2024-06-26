@@ -530,13 +530,10 @@ function IndexPage() {
         <div className={styles.headerWithPadding} id="build-the-rom">
           <h2 className={styles.pageHeader}>Build the ROM</h2>
         </div>
-        <p className="text-sm mb-8">
-          Prefer to do it yourself? Get the files from{" "}
-          <a href="https://github.com/city41/kof94te/releases">
-            the GitHub releases page
-          </a>
+        <p>
+          The ROM can be built at the{" "}
+          <a href="https://neorh.mattgreer.dev/kof94">Neo Rom Hack website</a>.
         </p>
-        <PatchApplier />
         <Hr />
         <div className={styles.headerWithPadding} id="tips">
           <h2 className={styles.pageHeader}>Tips</h2>
