@@ -189,6 +189,20 @@ function IndexPage() {
           <h2 className={styles.pageHeader}>Release Notes</h2>
         </div>
         <div className="mb-16">
+          <div className="bg-red-400 border-2 border-red-800 px-4 py-2">
+            <p>
+              There has been{" "}
+              <a
+                href="https://github.com/city41/kof94te/milestone/7?closed=1"
+                rel="noopener noreferer"
+              >
+                one bad bug
+              </a>{" "}
+              found in kof94te. <b>So there will be another release.</b>{" "}
+              I&apos;m holding off for now just in case more bugs are found. In
+              a few days to maybe a week, I will release 1.4.1.
+            </p>
+          </div>
           <Hr />
           <h3 className="heading text-lg font-bold pb-4">Version 1.4.0</h3>
           <p>
