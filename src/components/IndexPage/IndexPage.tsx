@@ -189,20 +189,28 @@ function IndexPage() {
           <h2 className={styles.pageHeader}>Release Notes</h2>
         </div>
         <div className="mb-16">
-          <div className="bg-red-400 border-2 border-red-800 px-4 py-2">
-            <p>
-              There has been{" "}
-              <a
-                href="https://github.com/city41/kof94te/milestone/7?closed=1"
-                rel="noopener noreferer"
-              >
-                one bad bug
-              </a>{" "}
-              found in kof94te. <b>So there will be another release.</b>{" "}
-              I&apos;m holding off for now just in case more bugs are found. In
-              a few days to maybe a week, I will release 1.4.1.
-            </p>
-          </div>
+          <Hr />
+          <h3 className="heading text-lg font-bold pb-4">Version 1.4.1</h3>
+          <p>Fixes a Rugal debug dip bug.</p>
+          <h4 className="heading font-bold py-4">Changes</h4>
+          <ul className="list-disc ml-4">
+            <li>
+              <b>Bug fix:</b> When choosing Rugal as your team via the debug
+              dip, all sound from then on would stop working. That is now fixed.
+            </li>
+          </ul>
+          <h4 className="heading font-bold py-4">Known Issues</h4>
+          <p>
+            Graphical glitches can occur when playing on real hardware with a
+            NeoSD or the Darksoft multi. This is due to limitations in these
+            carts. The original KOF94 game played on these carts has the same
+            graphical glitches.
+          </p>
+          <p className=" mt-4 bg-green-200 border-green-700 border px-4 py-2 my-4">
+            <b>This can now be fixed</b> with{" "}
+            <a href="https://neorh.mattgreer.dev/kof94/slofix">this patch</a>.
+            Thanks to paulb-nl for the fix.
+          </p>
           <Hr />
           <h3 className="heading text-lg font-bold pb-4">Version 1.4.0</h3>
           <p>
