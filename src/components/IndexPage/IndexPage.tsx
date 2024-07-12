@@ -190,6 +190,31 @@ function IndexPage() {
         </div>
         <div className="mb-16">
           <Hr />
+          <h3 className="heading text-lg font-bold pb-4">Version 1.4.2</h3>
+          <p>Fixes a character colors bug when losing to Rugal.</p>
+          <h4 className="heading font-bold py-4">Changes</h4>
+          <ul className="list-disc ml-4">
+            <li>
+              <b>Bug fix:</b> If you lost to Rugal in the boss fight, and you
+              chose alternate colors for your character who lost, they would be
+              shown in the falling sequence and on the continue screen with
+              their main colors. This is now fixed. Thanks to Leonard and
+              Goenitz for finding this.
+            </li>
+          </ul>
+          <h4 className="heading font-bold py-4">Known Issues</h4>
+          <p>
+            Graphical glitches can occur when playing on real hardware with a
+            NeoSD or the Darksoft multi. This is due to limitations in these
+            carts. The original KOF94 game played on these carts has the same
+            graphical glitches.
+          </p>
+          <p className=" mt-4 bg-green-200 border-green-700 border px-4 py-2 my-4">
+            <b>This can now be fixed</b> with{" "}
+            <a href="https://neorh.mattgreer.dev/kof94/slofix">this patch</a>.
+            Thanks to paulb-nl for the fix.
+          </p>
+          <Hr />
           <h3 className="heading text-lg font-bold pb-4">Version 1.4.1</h3>
           <p>Fixes a Rugal debug dip bug.</p>
           <h4 className="heading font-bold py-4">Changes</h4>
