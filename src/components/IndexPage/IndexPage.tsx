@@ -876,9 +876,9 @@ function IndexPage() {
               Changed ROMs and needed EPROMs
             </h3>
             <p>
-              These are the ROMs that need to be programmed, depending on which
-              patches you choose. For Team Edit it does not matter if you choose
-              the KOF95 or KOF94 portrait version, both are the same here.
+              These are the ROMs that need to be programmed. For Team Edit it
+              does not matter if you choose the KOF95 or KOF94 portrait version,
+              both are the same here.
             </p>
             <table className="sm:mx-32">
               <tbody>
