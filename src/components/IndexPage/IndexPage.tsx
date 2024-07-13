@@ -14,13 +14,15 @@ import gameOverPng from "./gameOver.png";
 import cutscene2Png from "./cutscene2.png";
 import usaEndingPng from "./usaEnding.png";
 import versionStringPng from "./titleScreenWithVersion.png";
+import realCartJpg from "./realCart.jpg";
+import p1ChangedJpg from "./p1Changed.jpg";
+import hereComesChallengePng from "./hereComesChallenge.png";
 
 import rugalTurnongOnDebugDipPng from "./rugalTurningOnDebugDip.png";
 import rugalFocusedPng from "./rugalFocused.png";
 import rugalPickFullFormPng from "./rugalPickFullForm.png";
 
 import styles from "./IndexPage.module.css";
-import { PatchApplier } from "./PatchApplier";
 
 function Hr() {
   return <div className="border-b-2 border-gray-600 my-8 -mx-8"></div>;
@@ -54,6 +56,11 @@ function IndexPage() {
           <li>
             <a className="menu-item" href="#tips">
               Tips
+            </a>
+          </li>
+          <li>
+            <a className="menu-item" href="#real-cart">
+              Real Cartridge
             </a>
           </li>
           <li>
@@ -740,6 +747,273 @@ function IndexPage() {
             </li>
           </ul>
         </div>
+        <Hr />
+        <div className={styles.headerWithPadding} id="real-cart">
+          <h2 className={styles.pageHeader}>
+            Putting KOF94TE onto a real cartridge
+          </h2>
+          <div className="flex flex-col gap-y-4">
+            <p>
+              I have put the hack onto a real cartridge. Here are tips if you
+              want to do this too.
+            </p>
+            <p className="bg-red-200 border-red-700 border px-4 py-2">
+              <b>Disclaimer:</b> I&apos;m not very experienced with this. The
+              info here was taken from{" "}
+              <a href="https://neo-geo.com/forums/index.php?threads/putting-a-rom-hack-on-a-real-cart.271549/">
+                this thread
+              </a>{" "}
+              on the Neo Geo forum. Thanks to the forum members who helped with
+              this.
+            </p>
+            <Image
+              className="shadow-xl"
+              src={realCartJpg.src}
+              width={realCartJpg.width}
+              height={realCartJpg.height}
+              alt="KOF94TE on a real Neo Geo cartridge"
+            />
+            <h3 className="font-bold text-xl">
+              Use a real KOF94 cart as the basis
+            </h3>
+            <p>
+              It is easiest to alter a real KOF94 cart. That way only some of
+              the chips need to be changed. You can alter an AES or MVS cart,
+              that doesn&apos;t matter. These tips are assuming you are using a
+              real KOF94 cart.
+            </p>
+            <h3 className="font-bold text-xl">Programming the ROM files</h3>
+            <p>
+              Build the ROM as normal at{" "}
+              <a href="https://neorh.mattgreer.dev/kof94">neorh</a>. Choose the
+              patches you want, and then download the MAME version of the ROM.
+              Once downloaded, unzip the zip file and inside are the ROM files,
+              ready to be programmed onto chips.
+            </p>
+            <p>
+              The ROM files are already byte swapped. So they can just be
+              programmed straight, as-is. Not all ROM files need to be
+              programmed, see the table below.
+            </p>
+            <p>
+              I don&apos;t know anything about EPROM programmers. I had{" "}
+              <a href="https://buyicnow.com">buyicnow</a> program my chips for
+              me.
+            </p>
+            <h3 className="font-bold text-xl">The slowdown fix patch</h3>
+            <p>
+              <a href="https://neorh.mattgreer.dev/kof94/slofix">
+                The slowdown fix patch
+              </a>{" "}
+              is a bit tricky with real carts. Adding it won&apos;t cause any
+              harm, but it likely won't have any benefit either.
+            </p>
+            <p>
+              KOF94 uses something called wait cycles. Wait cycles are a way to
+              tell the Neo Geo&apos;s main CPU to slow down a little bit. This
+              is needed to avoid graphical glitching in the game. The downside
+              is this also causes some slowdown in the gameplay. When SNK ported
+              KOF94 to the CD system, they fixed the game and removed the need
+              for wait cycles. The slowdown fix patch is basically that fix, so
+              the cart version no longer needs wait cycles either.
+            </p>
+            <p>
+              This is really beneficial on the MiSTer where wait cycles are
+              easily turned off, or on the NeoSD or Darksoft Multi which never
+              turn on wait cycles.
+            </p>
+            <p>
+              But wait cycles are turned on by a real cartridge by sending 5
+              volts to a few pins on the cartridge port. So even with this patch
+              applied, a real KOF94 cart will still have wait cycles turned on
+              and thus still be slow. To take advantage of this patch, you
+              either need to hack the cart to turn off the 5 volts on those
+              pins, something I don&apos;t believe anyone has ever tried. Or use
+              an entirely different game as the donor cart and program all of
+              the chips. Something I&apos;ve not done nor know anything about.
+            </p>
+            <h3 className="font-bold text-xl">
+              Slowdown on real carts warning
+            </h3>
+            <p className="bg-red-200 border-red-700 border px-4 py-2">
+              The hack runs great on a real cart, except one very minor thing
+              does have slowdown and sometimes, minor graphical issues.
+            </p>
+            <p>
+              When on the character select screen, if the other player joins in
+              and &quot;HERE COMES CHALLENGER&quot; is shown, there is slowdown
+              and that graphic is on the screen a bit longer than on vanilla
+              KOF94. Sometimes you can see some very minor graphical garbage at
+              the top of the screen during this too. This only happens if the
+              other player joins while on the character select screen. Joining
+              at any other time works just fine.
+            </p>
+            <Image
+              className="shadow-xl"
+              src={hereComesChallengePng.src}
+              width={hereComesChallengePng.width}
+              height={hereComesChallengePng.height}
+              alt="HERE COMES CHALLENGER on the character select screen"
+            />
+            <p>
+              Other than that, the hack fully works on real cart. Everything
+              runs at full speed and as expected.
+            </p>
+
+            <h3 className="font-bold text-xl">
+              Changed ROMs and needed EPROMs
+            </h3>
+            <p>
+              These are the ROMs that need to be programmed, depending on which
+              patches you choose. For Team Edit it does not matter if you choose
+              the KOF95 or KOF94 portrait version, both are the same here.
+            </p>
+            <table className="sm:mx-32">
+              <tbody>
+                <tr>
+                  <th className="bg-blue-800 text-white p-1 w-1/3">ROM</th>
+                  <th className="bg-blue-800 text-white p-1 w-1/3 border-l border-white">
+                    (E)EPROM model
+                  </th>
+                  <th className="bg-blue-800 text-white p-1 w-1/3 border-l border-white">
+                    Needed by
+                  </th>
+                </tr>
+                <tr>
+                  <td className="bg-focal text-bg-fade p-1 border-b border-fg-fg w-1/3">
+                    055-c1.c1
+                  </td>
+                  <td className="bg-focal text-bg-fade p-1 border-b border-fg-fg w-1/3">
+                    29f1615
+                  </td>
+                  <td className="text-bg-deep bg-fg p-1 border-b border-fg-fg">
+                    Team Edit and clean font
+                  </td>
+                </tr>
+                <tr>
+                  <td className="bg-focal text-bg-fade p-1 border-b border-fg-fg w-1/3">
+                    055-c2.c2
+                  </td>
+                  <td className="bg-focal text-bg-fade p-1 border-b border-fg-fg w-1/3">
+                    29f1615
+                  </td>
+                  <td className="text-bg-deep bg-fg p-1 border-b border-fg-fg">
+                    Team Edit
+                  </td>
+                </tr>
+                <tr>
+                  <td className="bg-focal text-bg-fade p-1 border-b border-fg-fg w-1/3">
+                    055-c7.c7
+                  </td>
+                  <td className="bg-focal text-bg-fade p-1 border-b border-fg-fg w-1/3">
+                    29f1615
+                  </td>
+                  <td className="text-bg-deep bg-fg p-1 border-b border-fg-fg">
+                    Team Edit
+                  </td>
+                </tr>
+                <tr>
+                  <td className="bg-focal text-bg-fade p-1 border-b border-fg-fg w-1/3">
+                    055-c8.c8
+                  </td>
+                  <td className="bg-focal text-bg-fade p-1 border-b border-fg-fg w-1/3">
+                    29f1615
+                  </td>
+                  <td className="text-bg-deep bg-fg p-1 border-b border-fg-fg">
+                    Team Edit
+                  </td>
+                </tr>
+                <tr>
+                  <td className="bg-focal text-bg-fade p-1 border-b border-fg-fg w-1/3">
+                    055-p1.p1
+                  </td>
+                  <td className="bg-focal text-bg-fade p-1 border-b border-fg-fg w-1/3">
+                    29f1615
+                  </td>
+                  <td className="text-bg-deep bg-fg p-1 border-b border-fg-fg">
+                    All except clean font
+                  </td>
+                </tr>
+                <tr>
+                  <td className="bg-focal text-bg-fade p-1 border-b border-fg-fg w-1/3">
+                    055-s1.s1
+                  </td>
+                  <td className="bg-focal text-bg-fade p-1 border-b border-fg-fg w-1/3">
+                    27c1000
+                  </td>
+                  <td className="text-bg-deep bg-fg p-1 border-b border-fg-fg">
+                    Team Edit
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              <b>In other words:</b> If you are programming Team Edit onto a
+              cart, then the C1,C2,C7,C8,P1 and S1 ROM chips all need to be
+              changed. If you choose other add-ons like cheat sheet, they will
+              all come along for the ride too.
+            </p>
+            <h3 className="font-bold text-xl">Changing P1 first</h3>
+            <p>
+              When soldering in the new ROM chips, you can first only change the
+              P1 chip as an initial test if you want.
+            </p>
+            <p>
+              If you do this and run the game, the character select screen will
+              look like this:
+            </p>
+            <Image
+              className="shadow-xl"
+              src={p1ChangedJpg.src}
+              width={p1ChangedJpg.width}
+              height={p1ChangedJpg.height}
+              alt="KOF94TE on a real Neo Geo cartridge, with only the P1 chip changed"
+            />
+            <p>
+              That is fine. That is just because the added graphics in the C ROM
+              chips are not present. The hack will still fully work. You should
+              be able to choose a team and play the game. If so, great news,
+              your P1 chip was programmed and installed correctly.
+            </p>
+            <p>
+              If you don&apos;t see this, or playing the game doesn&apos;t work,
+              then something is wrong. Soldering in the other chips won&apos;t
+              help.
+            </p>
+            <h3 className="font-bold text-xl">A warning about bugs</h3>
+            <p>
+              Many people have been playing the hack now for many hours. At this
+              point it is well tested and stable, suitable to be put onto a real
+              cart like this.
+            </p>
+            <p>
+              But it is always possible a bug is found after you have made your
+              cart. If so, the only way to get the bug fix is to redo the P1
+              chip again in your cart. So there is a small risk in making these
+              carts.
+            </p>
+            <h3 className="font-bold text-xl">
+              Check for bugs before you start
+            </h3>
+            <p>
+              Before you make a cart, check the{" "}
+              <a href="https://github.com/city41/kof94te/issues">
+                issues on GitHub
+              </a>
+              . If it says &quot;There aren&apos;t any open issues&quot;, that
+              means no bugs have been found that haven&apos;t been fixed yet.
+              You should be good to go.
+            </p>
+            <p>
+              If there is a bug listed there, that means a bug has been found
+              but it has not been fixed yet. In that case,{" "}
+              <a href="mailto:matt.e.greer@gmail.com">email me</a>. I can
+              probably fix the bug and then you won&apos;t have it permanently
+              on your cart.
+            </p>
+          </div>
+        </div>
+        <Hr />
         <div>
           <h2 className={styles.pageHeader}>Thanks</h2>
         </div>
