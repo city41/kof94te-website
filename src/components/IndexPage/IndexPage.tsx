@@ -814,7 +814,7 @@ function IndexPage() {
                 The slowdown fix patch
               </a>{" "}
               is a bit tricky with real carts. Adding it won&apos;t cause any
-              harm, but it likely won't have any benefit either.
+              harm, but it likely won&apos;t have any benefit either.
             </p>
             <p>
               KOF94 uses something called wait cycles. Wait cycles are a way to
