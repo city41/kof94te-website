@@ -848,6 +848,10 @@ function IndexPage() {
               other player joins while on the character select screen. Joining
               at any other time works just fine.
             </p>
+            <p>
+              The slowdown goes away once &quot;HERE COMES CHALLENGER&quot; goes
+              away. This slowdown is so minor you might not even notice it.
+            </p>
             <Image
               className="shadow-xl"
               src={hereComesChallengePng.src}
