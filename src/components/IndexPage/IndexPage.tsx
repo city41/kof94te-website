@@ -856,7 +856,7 @@ function IndexPage() {
               alt="HERE COMES CHALLENGER on the character select screen"
             />
             <p>
-              Other than that, the hack fully works on real cart. Everything
+              Other than that, the hack fully works on real carts. Everything
               runs at full speed and as expected.
             </p>
 
