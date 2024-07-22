@@ -69,11 +69,6 @@ function IndexPage() {
             </a>
           </li>
           <li>
-            <a className="menu-item" href="https://discord.gg/tvm4fpkUNq">
-              Discord
-            </a>
-          </li>
-          <li>
             <a
               className="menu-item"
               href="https://www.fightcade.com/game/kof94te"
@@ -603,8 +598,7 @@ function IndexPage() {
             <li>
               The version of the hack is on the title screen. Please include it
               when reporting a bug. Bugs can be reported at{" "}
-              <a href="https://github.com/city41/kof94te/issues">Github</a> or{" "}
-              <a href="https://discord.gg/Uuaka5mq">Discord</a>.
+              <a href="https://github.com/city41/kof94te/issues">Github</a>.
               <Image
                 className="shadow-xl my-4"
                 src={versionStringPng.src}
@@ -1039,7 +1033,6 @@ function IndexPage() {
           </div>
           <div>Original game by SNK</div>
           <a href="https://github.com/city41/kof94te">GitHub repo</a>
-          <a href="https://discord.gg/Uuaka5mq">Discord</a>
         </div>
       </div>
     </div>
